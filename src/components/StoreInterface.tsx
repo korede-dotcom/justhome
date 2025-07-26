@@ -89,7 +89,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch("http://localhost:3000/products/category", {
+        const res = await fetch("http://95.169.205.185:3333/products/category", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -121,7 +121,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
   const [storeOrders, setStoreOrders] = useState<Order[]>([])
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:3000/orders/storekeeper", {
+        const res = await fetch("http://95.169.205.185:3333/orders/storekeeper", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -149,7 +149,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
 
       const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:3000/products", {
+        const res = await fetch("http://95.169.205.185:3333/products", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -266,7 +266,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
     formData.append("file", file)
 
     try {
-      const res = await fetch("http://localhost:3000/products/upload", {
+      const res = await fetch("http://95.169.205.185:3333/products/upload", {
         method: "POST",
         body: formData,
         headers: {
@@ -328,7 +328,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
     }
 
     try {
-      const res = await fetch("http://localhost:3000/products/category", {
+      const res = await fetch("http://95.169.205.185:3333/products/category", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -426,7 +426,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
     }
 
     try {
-      const res = await fetch("http://localhost:3000/products", {
+      const res = await fetch("http://95.169.205.185:3333/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -520,7 +520,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
       const formData = new FormData()
       formData.append("file", file)
 
-      const res = await fetch("http://localhost:3000/products/bulk-upload", {
+      const res = await fetch("http://95.169.205.185:3333/products/bulk-upload", {
         method: "POST",
         body: formData,
         headers: {
@@ -617,7 +617,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
           </Card>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {storeOrders.map((order) => (
+            {storeOrders?.map((order) => (
               <Card key={order.id} className="border-2 border-indigo-200">
                 <CardHeader className="bg-indigo-50">
                   <div className="flex justify-between items-start">
@@ -631,7 +631,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
                     </div>
                   </div>
                   <div className="text-sm text-gray-600">
-                    <strong>Customer:</strong> {order.customerName}
+                    <strong>Customer:</strong> {order?.customerName}
                   </div>
                 </CardHeader>
 
@@ -642,7 +642,7 @@ const StoreInterface = ({ orders, onUpdateOrder, onPendingChange }: StoreInterfa
                       <span className="font-semibold">Security Check Required</span>
                     </div>
                     <p className="text-sm text-yellow-700">
-                      Only release items to: <strong>{order.packager.fullName}</strong>
+                      Only release items to: <strong>{order?.packager?.fullName}</strong>
                     </p>
                   </div>
 

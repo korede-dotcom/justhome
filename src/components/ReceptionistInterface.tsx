@@ -34,7 +34,7 @@ const ReceptionistInterface = ({ orders, onUpdateOrder }: ReceptionistInterfaceP
   useEffect(() => {
     const fetchPackagers = async () => {
       try {
-        const response = await fetch('http://localhost:3000/users/packager',{
+        const response = await fetch('http://95.169.205.185:3333/users/packager',{
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const ReceptionistInterface = ({ orders, onUpdateOrder }: ReceptionistInterfaceP
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/orders/payment/${orderId}`, {
+    const res = await fetch(`http://95.169.205.185:3333/orders/payment/${orderId}`, {
       method: "PATCH",
       headers: {
             "Content-Type": "application/json",
@@ -120,7 +120,7 @@ const ReceptionistInterface = ({ orders, onUpdateOrder }: ReceptionistInterfaceP
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/orders/packager/${orderId}`, {
+    const res = await fetch(`http://95.169.205.185:3333/orders/packager/${orderId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

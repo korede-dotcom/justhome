@@ -93,7 +93,7 @@ const UserManagement = ({ users, currentUser, onAddUser, onUpdateUser }: UserMan
   }
 
   try {
-    const res = await fetch("http://localhost:3000/users", {
+    const res = await fetch("http://95.169.205.185:3333/users", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": `Bearer ${localStorage.getItem("token")}` },
       body: JSON.stringify({

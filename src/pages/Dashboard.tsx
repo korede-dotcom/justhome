@@ -161,7 +161,7 @@ const Dashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:3000/users", {
+      const res = await fetch("http://95.169.205.185:3333/users", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -188,7 +188,7 @@ const Dashboard = () => {
   }
   const fetchActivityLogs = async () => {
     try {
-      const res = await fetch("http://localhost:3000/activity-logs", {
+      const res = await fetch("http://95.169.205.185:3333/activity-logs", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -299,7 +299,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:3000/orders", {
+        const res = await fetch("http://95.169.205.185:3333/orders", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -368,7 +368,7 @@ const Dashboard = () => {
 
     // POST to backend
     try {
-      await fetch("http://localhost:3000/activity-logs", {
+      await fetch("http://95.169.205.185:3333/activity-logs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -504,7 +504,7 @@ const Dashboard = () => {
 
   const updateUser = async (userId: string, updates: Partial<User>) => {
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`, {
+      const res = await fetch(`http://95.169.205.185:3333/users/${userId}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -112,7 +112,7 @@ const AttendeeInterface = ({ onOrderSubmit, orders }: AttendeeInterfaceProps) =>
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:3000/products", {
+        const res = await fetch("http://95.169.205.185:3333/products", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -223,7 +223,7 @@ const AttendeeInterface = ({ onOrderSubmit, orders }: AttendeeInterfaceProps) =>
     }
 
     try {
-      const response = await fetch("http://localhost:3000/orders", {
+      const response = await fetch("http://95.169.205.185:3333/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

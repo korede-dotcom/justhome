@@ -37,7 +37,7 @@ const TransactionTable = ({
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:3000/orders", {
+        const res = await fetch("http://95.169.205.185:3333/orders", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
